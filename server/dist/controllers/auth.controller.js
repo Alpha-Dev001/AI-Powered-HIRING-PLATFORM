@@ -9,6 +9,7 @@ class AuthController {
      * HELP: Simple Register Logic
      * Saves a new user and sends a confirmation message.
      */
+    
     async register(req, res) {
         try {
             const { fullName, email, password, companyName } = req.body;
