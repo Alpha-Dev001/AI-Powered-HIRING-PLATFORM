@@ -9,6 +9,7 @@ declare class ApplicantsController {
      * Talent Profile Ingestion:
      * Handles administrative PDF/CSV uploads to the registry.
      */
+    
     upload(req: Request, res: Response): Promise<Response<any, Record<string, any>>>;
     /**
      * Candidate Profile Initialization:
