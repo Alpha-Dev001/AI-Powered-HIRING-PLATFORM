@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+@theme {
+  --color-scrutiq-blue: #2C7BE5;
+  --color-scrutiq-dark: #344050;
+  --color-scrutiq-muted: #5E6E82;
+  --color-scrutiq-border: #E3EBF6;
+  --color-scrutiq-bg: #F9FAFD;
+  --color-scrutiq-surface: #FFFFFF;
+  
+  /* Primary font */
+  --font-jakarta: "Plus Jakarta Sans", sans-serif;
+}
+
+@layer base {
+  html {
+    font-size: 16px; /* Base font size slightly larger */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply font-jakarta bg-scrutiq-bg text-scrutiq-muted antialiased text-[15px] leading-relaxed;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-jakarta font-black tracking-tighter text-scrutiq-dark;
+  }
+
+  /* Scrutiq Hover Presets */
+  .hover-lift {
+    @apply transition-all duration-300 ease-out hover:-translate-y-1.5 hover:shadow-2xl hover:shadow-scrutiq-blue/10 active:scale-[0.98];
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-scrutiq-blue hover:bg-scrutiq-blue/90 text-white px-5 py-2.5 rounded-lg font-bold text-sm transition-all shadow-sm active:scale-95;
+  }
+
+  .btn-secondary {
+    @apply bg-scrutiq-surface border border-scrutiq-border hover:bg-scrutiq-bg text-scrutiq-dark px-5 py-2.5 rounded-lg font-bold text-sm transition-all;
+  }
+
+  .admin-card {
+    @apply bg-scrutiq-surface border border-scrutiq-border rounded-xl overflow-hidden transition-all;
+    /* Scrutiq uses borders over shadows for that clean 'Flat' feeling */
+  }
+
+  .status-pill {
+    @apply px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider border transition-colors;
+  }
+
+  .form-input {
+    @apply w-full bg-scrutiq-surface border border-scrutiq-border rounded-lg py-2.5 px-4 text-sm focus:border-scrutiq-blue focus:ring-4 focus:ring-scrutiq-blue/10 outline-none transition-all placeholder:text-scrutiq-muted/50;
+  }
+}
+
+/* Custom Scrollbar for professional UI */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
